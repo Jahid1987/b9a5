@@ -1,0 +1,206 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticketing</title>
+    <!-- font awesome link  -->
+    <script
+      src="https://kit.fontawesome.com/50aead5003.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="container mx-auto">
+      <!-- nav section starts here  -->
+      <nav>
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a>Home</a></li>
+                <li><a>About</a></li>
+                <li><a>Destination</a></li>
+                <li><a>Search</a></li>
+              </ul>
+            </div>
+            <a class="btn btn-ghost text-xl font-extrabold">S-Ticket</a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li><a>Home</a></li>
+              <li><a>About</a></li>
+              <li><a>Destination</a></li>
+              <li><a>Search</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a
+              class="btn btn-sm md:btn-md btn-outline btn-success bg-green-200 font-bold px-8"
+              >Bus <i class="fa-solid fa-bus"></i
+            ></a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- banner section starts -->
+      <div class="mt-6">
+        <div
+          class="hero min-h-screen"
+          style="background-image: url(images/banner.png)"
+        >
+          <div class="hero-overlay bg-opacity-10"></div>
+          <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-lg">
+              <h1 class="mb-5 text-5xl font-bold">End-toEnd Travel with</h1>
+              <h1 class="mb-5 text-5xl font-bold text-green-400">
+                S Paribahan
+              </h1>
+              <p class="mb-5">
+                Provident cupiditate voluptatem et in. Quaerat fugiat ut
+                assumenda excepturi exercitationem quasi. In deleniti eaque aut
+                repudiandae et a id nisi.
+              </p>
+              <button class="btn btn-outline btn-success">Buy Tickets</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Coupon/best offer section starts  -->
+      <section class="container mx-auto">
+        <div class="flex flex-col md:flex-row mt-6 gap-4 px-3">
+          <div class="w-2/4 h-[220px] bg-[#FFBF0F] rounded-md flex">
+            <div class="flex flex-1 flex-col justify-center items-center">
+              <h2 class="font-extrabold text-2xl">15% OFF</h2>
+              <p class="font-bold">on your next purchase</p>
+              <p class="text-slate-500">use by January 2024</p>
+            </div>
+            <div class="">
+              <img src="images/cupon-devider.png" alt="" />
+            </div>
+            <div class="flex flex-col justify-center items-center pr-8">
+              <h2 class="font-extrabold text-2xl">NEW15</h2>
+              <p class="text-slate-500">Coupon Code</p>
+            </div>
+          </div>
+
+          <div class="w-2/4 h-[220px] bg-[#F78C9C] rounded-md flex">
+            <div class="flex flex-1 flex-col justify-center items-center">
+              <h2 class="font-extrabold text-2xl">20% OFF</h2>
+              <p class="font-bold">on your next purchase</p>
+              <p class="text-slate-500">use by January 2024</p>
+            </div>
+            <div class="">
+              <img src="images/cupon-devider.png" alt="" />
+            </div>
+            <div class="flex flex-col justify-center items-center pr-8">
+              <h2 class="font-extrabold text-2xl">Couple 20</h2>
+              <p class="text-slate-500">Coupon Code</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <button class="font-bold btn btn-outline btn-success mt-6 px-6">
+            See All Offers
+          </button>
+        </div>
+      </section>
+
+      <!-- Ticketing sections starts here  -->
+      <section
+        class="max-w-[1440px] border border-t-green-300 mt-8 rounded-t-3xl mx-auto bg-[#F7F8F8]"
+      >
+        <header class="text-center mt-6">
+          <h2 class="font-bold text-3xl">S Paribahan</h2>
+          <p class="text-slate-500">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            voluptates voluptatum cupiditate
+          </p>
+        </header>
+
+        <!-- Ticket section  -->
+        <div class="container mx-auto mt-6">
+          <div
+            class="max-w-[1170px] h-[418px] bg-white rounded-lg flex justify-between mx-auto"
+          >
+            <!-- left section  -->
+            <div class="p-8 flex-1">
+              <div class="flex justify-between gap">
+                <!-- top left section  -->
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-bus text-4xl"></i>
+                  <div>
+                    <h3 class="text-3xl font-bold">Greenline Paribahan</h3>
+                    <p class="text-slate-500">Coach-009-WEB ! AC_Business</p>
+                  </div>
+                </div>
+                <!-- top right section  -->
+                <div>
+                  <a
+                    class="btn btn-sm md:btn-md btn-outline btn-success bg-green-200 font-bold px-8"
+                    >Bus <i class="fa-solid fa-bus"></i
+                  ></a>
+                </div>
+              </div>
+              <!-- left bottom section  -->
+              <div class="bg-[#F7F8F8] w-[808px] h-[258px] mt-6 rounded-lg p-8">
+                <div class="flex justify-between mb-1 border-dotted">
+                    <span class="text-slate-500">Route</span><span class="font-bold">Dhaka-Sylhet</span>
+                </div>
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+              </div>
+            </div>
+            <!-- left section ends  -->
+
+            <div>
+              <img src="images/info-devider.png" alt="" />
+            </div>
+            <div class="p-8 flex flex-col space-y-3 justify-center items-center mr-6">
+                <img src="icons/taka.png" alt="">
+                <h3 class="font-bold text-3xl">550 Taka</h3>
+                <p class="text-slate-500">Per Seat</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+    <script src="js/utilities.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
