@@ -3,11 +3,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart Ticketing</title>
-    <!-- font awesome link  -->
-    <script
-      src="https://kit.fontawesome.com/50aead5003.js"
-      crossorigin="anonymous"
-    ></script>
     <!-- DaisyUI -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
@@ -64,8 +59,7 @@
           <div class="navbar-end">
             <a
               class="btn btn-sm md:btn-md btn-outline btn-success bg-green-200 font-bold px-8"
-              >Bus <i class="fa-solid fa-bus"></i
-            ></a>
+              >Bus <img src="images/bus-icon.png" alt=""></a>
           </div>
         </div>
       </nav>
@@ -165,11 +159,11 @@
         </div>
       </section>
       <!-- Ticketing sections starts here  -->
-      <section
-        class="max-w-[1440px] border border-t-green-300 pb-20 mt-10 rounded-t-3xl mx-auto bg-[#F7F8F8]"
+      <section id="ticket-section"
+        class="max-w-[1440px] border border-t-green-300 pb-20 mt-10 pt-10 rounded-t-3xl mx-auto bg-[#F7F8F8]"
       >
         <!-- head section of ticketing -->
-        <header id="ticket-section" class="text-center mt-6">
+        <header  class="text-center mt-6 space-y-3">
           <h2 class="font-bold text-3xl">S Paribahan</h2>
           <p class="text-slate-500">
             Secure your seats with S Paribahan. Experience comfort and
@@ -177,7 +171,7 @@
           </p>
         </header>
         <!-- Ticket section  -->
-        <div class="container mx-auto my-6">
+        <div class="container mx-auto my-10">
           <div
             class="max-w-[1170px] h-[418px] bg-white rounded-lg flex justify-between mx-auto"
           >
@@ -186,7 +180,7 @@
               <div class="flex justify-between gap">
                 <!-- top left section  -->
                 <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-bus text-4xl"></i>
+                  <img src="images/bus-logo.png" alt="">
                   <div>
                     <h3 class="text-3xl font-bold">Greenline Paribahan</h3>
                     <p class="text-slate-500">Coach-009-WEB ! AC_Business</p>
@@ -196,7 +190,7 @@
                 <div>
                   <a
                     class="btn btn-sm md:btn-md btn-outline btn-success bg-green-200 font-bold px-8"
-                    ><i class="fas fa-couch"></i>
+                    ><img src="images/seat-green.png" alt="">
                     <span id="remaining-seat">40</span> Seats left</a
                   >
                 </div>
@@ -245,11 +239,11 @@
               <div class="space-y-4">
                 <h2 class="text-2xl font-semibold">Select Your Seat</h2>
                 <p class="flex justify-between">
-                  <span class="text-slate-500"
-                    ><i class="fas fa-couch"></i> Available</span
+                  <span class="text-slate-500 flex justify-center items-center gap-2"
+                    ><img src="images/seat-gray.png" alt=""> Available</span
                   >
-                  <span class="text-green-500"
-                    ><i class="fas fa-couch"></i> Selected</span
+                  <span class="text-green-500 flex justify-center items-center gap-2"
+                    ><img src="images/seat-green-filled.png" alt=""> Selected</span
                   >
                 </p>
               </div>
