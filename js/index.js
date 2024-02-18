@@ -18,7 +18,7 @@ function updatingUi(e) {
   tr.appendChild(td2);
 
   const td3 = document.createElement("td");
-  td3.textContent = "500";
+  td3.textContent = "550";
   tr.appendChild(td3);
 
   tbody.appendChild(tr);
@@ -56,7 +56,10 @@ for (let seat of allSeats) {
 
 // COUPON HANDLE SECTION
 const applyCouponBtn = document.getElementById("apply-coupon");
+const couponInput = document.getElementById('coupon-input');
+const couponErrMsg = document.getElementById('coupon-err-msg');
 let couponCode = "";
+
 function handleCoupon(e) {
   if (
     (e.target.value === "NEW15" || e.target.value === "Couple 20") &&
@@ -64,18 +67,42 @@ function handleCoupon(e) {
   ) {
     applyCouponBtn.removeAttribute("disabled");
     couponCode = e.target.value;
+    couponErrMsg.textContent = "";
   } else {
     applyCouponBtn.setAttribute("disabled", true);
-
     couponCode = "";
+    couponErrMsg.textContent = "Either you selected no seat or entered wrong coupon code.";
   }
 }
 applyCouponBtn.addEventListener("click", () => {
   if (couponCode === "Couple 20") {
     const grandTotal = grossTotal - grossTotal * 0.2;
     setTextContentById("grand-total", grandTotal);
+    couponInput.style.display = 'none';
   } else if (couponCode === "NEW15") {
     const grandTotal = grossTotal - grossTotal * 0.15;
     setTextContentById("grand-total", grandTotal);
+    couponInput.style.display = 'none';
   }
 });
+
+// next button handle 
+const gotoNextBtn = document.getElementById('goto-next');
+const phoneErrMsg = document.getElementById('phone-err-msg');
+
+function handleGotoNext(e){
+
+  console.log();
+  if(e.target.value.length > 0 && seatNumbers.length > 0 && !e.target.value.match(/[^0-9]/g)){
+    gotoNextBtn.removeAttribute('disabled');
+    phoneErrMsg.textContent = '';
+  }else{
+    gotoNextBtn.setAttribute('disabled', true);
+    phoneErrMsg.textContent = ' Either you selected no seat or entered wrong mobile number';
+  }
+}
+
+gotoNextBtn.addEventListener('click', (e)=> {
+  e.preventDefault();
+  
+})
