@@ -1,20 +1,81 @@
 const allSeats = document.getElementsByClassName("kbd");
 let remainingSeat = 40;
 let selectedSeat = 0;
+let grossTotal = 0;
+const seatNumbers = [];
 
+const tbody = document.getElementById("t-body");
+
+function updatingUi(e) {
+  const tr = document.createElement("tr");
+
+  const td1 = document.createElement("td");
+  td1.textContent = e.target.textContent;
+  tr.appendChild(td1);
+
+  const td2 = document.createElement("td");
+  td2.textContent = "Economy";
+  tr.appendChild(td2);
+
+  const td3 = document.createElement("td");
+  td3.textContent = "500";
+  tr.appendChild(td3);
+
+  tbody.appendChild(tr);
+}
+
+// seat selection handdling
 function addSeat(e) {
   if (selectedSeat < 4) {
-    selectedSeat++;
-    remainingSeat--;
-    setTextContentById("remaining-seat", remainingSeat);
-    setTextContentById("selected-seat", selectedSeat);
-    e.target.classList.add("bg-green-400", "text-white");
-  }else{
-    alert('You cannot select more than 4 seat. ')
+    if (!seatNumbers.includes(e.target.innerText)) {
+      // selecting seat
+      seatNumbers.push(e.target.innerText);
+      selectedSeat++;
+      remainingSeat--;
+      grossTotal = selectedSeat * 550;
+
+      // updating ui
+      e.target.classList.add("bg-green-400", "text-white");
+      setTextContentById("remaining-seat", remainingSeat);
+      setTextContentById("selected-seat", selectedSeat);
+      setTextContentById("gross-total", grossTotal);
+      setTextContentById("grand-total", grossTotal);
+      updatingUi(e);
+      // updateGrandTotal(grossTotal);
+    } else {
+      alert(`${e.target.innerText} is already selected.`);
+    }
+  } else {
+    alert("You cannot select more than 4 seat. ");
   }
-//   console.log(selectedSeat, remainingSeat)
 }
 
 for (let seat of allSeats) {
   seat.addEventListener("click", addSeat);
 }
+
+// COUPON HANDLE SECTION
+const applyCouponBtn = document.getElementById("apply-coupon");
+let couponCode = "";
+function handleCoupon(e) {
+  if (
+    (e.target.value === "NEW15" || e.target.value === "Couple 20") &&
+    seatNumbers.length > 0
+  ) {
+    applyCouponBtn.removeAttribute("disabled");
+    couponCode = e.target.value;
+  } else {
+    applyCouponBtn.setAttribute("disabled", true);
+
+    couponCode = "";
+  }
+}
+applyCouponBtn.addEventListener("click", () => {
+  if (couponCode === "Couple 20") {
+    const grandTotal = grossTotal - grossTotal * 0.2;
+    setTextContentById("grand-total", grandTotal);
+  } else if (couponCode === "NEW15") {
+    const grandTotal = grossTotal - grossTotal * 0.15;
+    setTextContentById("grand-total", grandTotal);
+  }
+});

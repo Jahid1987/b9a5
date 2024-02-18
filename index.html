@@ -116,6 +116,7 @@
         </section>
         <!-- Ticketing sections starts here  -->
         <section class="max-w-[1440px] border border-t-green-300 mt-10 rounded-t-3xl mx-auto bg-[#F7F8F8]">
+            <!-- head section of ticketing -->
             <header class="text-center mt-6">
                 <h2 class="font-bold text-3xl">S Paribahan</h2>
                 <p class="text-slate-500">
@@ -123,7 +124,6 @@
                     voluptates voluptatum cupiditate
                 </p>
             </header>
-
             <!-- Ticket section  -->
             <div class="container mx-auto my-6">
                 <div class="max-w-[1170px] h-[418px] bg-white rounded-lg flex justify-between mx-auto">
@@ -278,32 +278,21 @@
                                             <th>Price</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <!-- row 1 -->
-                                        <tr>
-                                            <td>D3</td>
-                                            <td>Economy</td>
-                                            <td>550</td>
-                                        </tr>
-                                        <!-- row 2 -->
-                                        <tr>
-                                            <td>D3</td>
-                                            <td>Economy</td>
-                                            <td>550</td>
-                                        </tr>
+                                    <tbody id="t-body">
+                                        <!-- Row will be append from js  -->
                                     </tbody>
                                 </table>
 
                             </div>
                             <div class="space-y-4">
                                 <div class="flex justify-between font-bold mt-3 pr-10"><span>Total Price</span>
-                                    <span>BDT <span id="gross-total ">1100</span></span></div>
+                                    <span>BDT <span id="gross-total">0</span></span></div>
                                 <label class="input input-bordered flex items-center gap-2">
-                                    <input type="text" class="grow" placeholder="Have any coupon?" />
-                                    <button class="btn btn-sm btn-info" disabled="disabled">Apply</button>
+                                    <input onkeyup="handleCoupon(event)" type="text" class="grow" placeholder="Have any coupon?" />
+                                    <button id="apply-coupon" class="btn btn-sm btn-info" disabled="true">Apply</button>
                                 </label>
                                 <div class="flex justify-between font-bold mt-3 pr-10"><span>Grand Price</span>
-                                    <span>BDT <span id="grand-total ">1100</span></span></div>
+                                    <span>BDT <span id="grand-total">0</span></span></div>
                             </div>
 
                         </div>
@@ -311,14 +300,14 @@
                         <div class="p-4">
                             <label class="form-control w-full max-w-full">
                                 <div class="label">
-                                    <span class="label-text font-bold">Passenger Name <sup class="text-red-400 text-lg">*</sup></span>
+                                    <span class="label-text font-bold">Passenger Name <sup class="text-red-400">*</sup></span>
                                 </div>
                                 <input type="text" placeholder="Enter your name"
                                     class="input input-bordered w-full max-w-full" />
                             </label>
                             <label class="form-control w-full max-w-full">
                                 <div class="label">
-                                    <span class="label-text font-bold">Phone Number<sup class="text-red-400 text-lg">*</sup></span>
+                                    <span class="label-text font-bold">Phone Number<sup class="text-red-400">*</sup></span>
                                 </div>
                                 <input type="text" placeholder="Enter your phone number"
                                     class="input input-bordered w-full max-w-full" />
