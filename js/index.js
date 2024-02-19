@@ -2,7 +2,7 @@ const allSeats = document.getElementsByClassName("kbd");
 let remainingSeat = 40;
 let selectedSeat = 0;
 let grossTotal = 0;
-const seatNumbers = [];
+let seatNumbers = [];
 
 const tbody = document.getElementById("t-body");
 
@@ -72,7 +72,7 @@ function handleCoupon(e) {
   } else {
     applyCouponBtn.setAttribute("disabled", true);
     couponCode = "";
-    couponErrMsg.textContent = "Either you selected no seat or entered wrong coupon code.";
+    couponErrMsg.textContent = "Either you selected 0 seat or entered wrong coupon code.";
   }
 }
 applyCouponBtn.addEventListener("click", () => {
@@ -103,11 +103,24 @@ function handleGotoNext(e){
     phoneErrMsg.textContent = '';
   }else{
     gotoNextBtn.setAttribute('disabled', true);
-    phoneErrMsg.textContent = ' Either you selected no seat or entered wrong mobile number';
+    phoneErrMsg.textContent = ' Either you selected 0 seat or entered wrong mobile number';
   }
 }
 
 gotoNextBtn.addEventListener('click', (e)=> {
   e.preventDefault();
-  
+  remainingSeat = 40;
+  selectedSeat = 0;
+  grossTotal = 0;
+  setTextContentById("remaining-seat", remainingSeat);
+  setTextContentById("selected-seat", selectedSeat);
+  setTextContentById("gross-total", 0);
+  setTextContentById("grand-total", 0);
+  tbody.innerHTML = '';
+  if(seatNumbers.length > 0){
+    for(let seat of seatNumbers){
+      document.getElementById(seat).classList.remove("bg-green-400", "text-white");
+      seatNumbers=[];
+    }
+  }
 })
